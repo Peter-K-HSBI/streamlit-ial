@@ -6,4 +6,3 @@ scipy
 datetime
 pathlib
 dataclasses
-json
