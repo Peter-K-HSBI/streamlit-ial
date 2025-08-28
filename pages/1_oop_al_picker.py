@@ -259,15 +259,15 @@ def main(input="iris",classifier="forest",uncertainty="entropy", extra_params={}
     plt.show()
 
     #One final training with all queried points for evaluation
-    game.clf.fit(game.X_train, game.y_train)
-    predictions = game.clf.predict(game.X_test)
+    #game.clf.fit(game.X_train, game.y_train)
+    #predictions = game.clf.predict(game.X_test)
     #Save accuracy of current seed in array for later use
-    global_history = accuracy_score(predictions, game.y_test)
+    #global_history = accuracy_score(predictions, game.y_test)
 
     # This can probably be done in a nicer way for the main program to sort out the details.
-    return("Final accuracy: " + str(global_history)+"\n"+
-           "Total number of points: "+str(game.N_QUERIES)+"\n"+
-           "Classes discovered: "+str(np.unique(game.y_train).size)+"/"+str(np.unique(game.y_raw).size))
+    #return("Final accuracy: " + str(global_history)+"\n"+
+    #       "Total number of points: "+str(game.N_QUERIES)+"\n"+
+    #       "Classes discovered: "+str(np.unique(game.y_train).size)+"/"+str(np.unique(game.y_raw).size))
 
 # The following defines the "game state", which is the core of the program and contains most of the information used throughout the program,
 # such as chosen data points and the current choice of model and uncertainty.
