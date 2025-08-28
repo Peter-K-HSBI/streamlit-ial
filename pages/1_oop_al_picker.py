@@ -16,6 +16,9 @@ from sklearn.metrics import accuracy_score
 import operator
 import datetime
 from pathlib import Path
+import streamlit as st
+
+st.button("Start game")
 
 def PlotContour2(x_grid, y_grid, clf):
     # This function generates a grid of function values according to the classifier.
