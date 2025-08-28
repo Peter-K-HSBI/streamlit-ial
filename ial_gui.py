@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
-import oop_al_picker as ial
-import oop_al_competition as comp
+import pages.oop_al_picker as ial
+import pages.oop_al_competition as comp
 
 class IAL_GUI:
     def __init__(self):

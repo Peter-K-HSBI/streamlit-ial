@@ -1,7 +1,7 @@
 import streamlit as st
 #from tkinter import ttk, messagebox
-import oop_al_picker as ial
-import oop_al_competition as comp
+import pages.1_oop_al_picker as ial
+import pages.2_oop_al_competition as comp
 
 class IAL_GUI:
     def __init__(self):
