@@ -18,8 +18,6 @@ import datetime
 from pathlib import Path
 import streamlit as st
 
-st.button("Start game")
-
 def PlotContour2(x_grid, y_grid, clf):
     # This function generates a grid of function values according to the classifier.
     zz = np.zeros((y_grid.size,x_grid.size))
@@ -522,6 +520,8 @@ class game_state:
 
 def on_close(event):
     pass
+
+st.button("Start game", on_click=main)
 
 if __name__ == "__main__":
     def main():  # your arguments here
