@@ -1,5 +1,4 @@
 import streamlit as st
+import ial_gui
 
-st.title('🎈 App Name')
-
-st.write('Hello world!')
+ial_gui()
