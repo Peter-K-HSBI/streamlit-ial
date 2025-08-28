@@ -185,6 +185,7 @@ def uncert_choice(label,game):
     #game.update_uncert() #to be implemented
 
 def main(input="iris",classifier="forest",uncertainty="entropy", extra_params={}):
+    st.write("main initialized!")
     global t
     t = datetime.datetime(1,1,1)
     
