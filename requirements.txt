@@ -1,6 +1,5 @@
 streamlit
 numpy
-tkinter
 matplotlib
 sklearn
 scipy
