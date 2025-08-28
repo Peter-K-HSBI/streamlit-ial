@@ -6,21 +6,13 @@ import streamlit as st
 
 #ial_gui()
 
-# Title for the app
-st.title("Streamlit App")
+st.header("InterActive Learner")
+st.text("Hello! This is the entrypoint page for the InterActive Learner. Here are some descriptions of the available modes.")
 
-# Displaying the text
-if 'button_clicked' not in st.session_state:
-    st.session_state['button_clicked'] = False
+col1, col2 = st.columns(2)
 
-def button_clicked():
-    st.session_state['button_clicked'] = not st.session_state['button_clicked']
+col1.header("This is the first column.")
+col1.text("I guess I will describe the first mode here.")
 
-# Button
-st.button("Click Me", on_click=button_clicked)
-
-# Label updates on button click
-if st.session_state['button_clicked']:
-    st.text("Button Clicked!")
-else:
-    st.text("Hello, Streamlit!")
+col2.header("This is the second column.")
+col2.text("I might put a description of the competition mode here.")
