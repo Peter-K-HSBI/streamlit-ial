@@ -254,9 +254,9 @@ def main(input="iris",classifier="forest",uncertainty="entropy", extra_params={}
     butt2.on_clicked(lambda event: callbutton2(event, game))
     butt3.on_clicked(lambda event: callbutton3(event, game))
 
-    plt.xlim(game.X_raw[:,0].min()-0.5,game.X_raw[:,0].max()+0.5)
-    plt.ylim(game.X_raw[:,1].min()-0.5,game.X_raw[:,1].max()+0.5)
-    plt.show()
+    st.plt.xlim(game.X_raw[:,0].min()-0.5,game.X_raw[:,0].max()+0.5)
+    st.plt.ylim(game.X_raw[:,1].min()-0.5,game.X_raw[:,1].max()+0.5)
+    st.plt.show()
 
     #One final training with all queried points for evaluation
     #game.clf.fit(game.X_train, game.y_train)
