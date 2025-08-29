@@ -214,10 +214,8 @@ def main(input="iris",classifier="forest",uncertainty="entropy", extra_params={}
     #    it unnecessarily slows down the process significantly.
     # 2. If you want to imitate "batch querying", it makes sense to use the same uncertainty measurements multiple times before recalculating.
     #    Note that this is not quite batch querying, as the label of a queried point still becomes visible right away.
-    bax = game.fig.add_axes([0.45, 0.05, 0.09, 0.075])
-    butt = st.button(
-        label = "Recalc. Uncertainty"
-    )
+    #bax = game.fig.add_axes([0.45, 0.05, 0.09, 0.075])
+    st.button(label = "Recalc. Uncertainty", on_click = lambda event: callbutton(event, game))
 
     # Button for highlighting training data
     bax2 = game.fig.add_axes([0.35, 0.05, 0.09, 0.075])
@@ -249,7 +247,6 @@ def main(input="iris",classifier="forest",uncertainty="entropy", extra_params={}
 
     check.on_clicked(lambda event: callback(event, game))
 
-    butt.on_clicked(lambda event: callbutton(event, game))
     butt2.on_clicked(lambda event: callbutton2(event, game))
     butt3.on_clicked(lambda event: callbutton3(event, game))
 
