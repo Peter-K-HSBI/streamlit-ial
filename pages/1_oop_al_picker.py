@@ -215,8 +215,7 @@ def main(input="iris",classifier="forest",uncertainty="entropy", extra_params={}
     # 2. If you want to imitate "batch querying", it makes sense to use the same uncertainty measurements multiple times before recalculating.
     #    Note that this is not quite batch querying, as the label of a queried point still becomes visible right away.
     bax = game.fig.add_axes([0.45, 0.05, 0.09, 0.075])
-    butt = mpl.widgets.Button(
-        ax = bax,
+    butt = st.button(
         label = "Recalc. Uncertainty"
     )
 
