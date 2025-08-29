@@ -256,7 +256,8 @@ def main(classifier="forest",uncertainty="entropy", extra_params={}):
     plt.ylim(game.X_raw[:,1].min()-0.5,game.X_raw[:,1].max()+0.5)
     st.pyplot(game.fig)
     
-    st.button(label = "Recalc. Uncertainty", on_click = (lambda game: debug_printer(game)))
+    #st.button(label = "Recalc. Uncertainty", on_click = (lambda game: debug_printer(game)))
+    st.button(label = "Recalc. Uncertainty", on_click = debug_printer(game=game))
 
     #One final training with all queried points for evaluation
     #game.clf.fit(game.X_train, game.y_train)
