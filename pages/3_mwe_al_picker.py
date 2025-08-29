@@ -185,7 +185,7 @@ def uncert_choice(label,game):
     #game.update_uncert() #to be implemented
 
 def debug_printer():
-    print("It's working! It's working!")
+    st.write("It's working! It's working!")
 
 def main(classifier="forest",uncertainty="entropy", extra_params={}):
     st.write("main initialized!")
