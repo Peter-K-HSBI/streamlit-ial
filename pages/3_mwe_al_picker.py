@@ -184,6 +184,9 @@ def uncert_choice(label,game):
     game.unc = dict_uncert[label]
     #game.update_uncert() #to be implemented
 
+def debug_printer(event,game):
+    print("It's working! It's working!")
+
 def main(classifier="forest",uncertainty="entropy", extra_params={}):
     st.write("main initialized!")
     global t
@@ -253,7 +256,7 @@ def main(classifier="forest",uncertainty="entropy", extra_params={}):
     plt.ylim(game.X_raw[:,1].min()-0.5,game.X_raw[:,1].max()+0.5)
     st.pyplot(game.fig)
     
-    st.button(label = "Recalc. Uncertainty", on_click = (lambda event, game=game: callbutton(event, game)))
+    st.button(label = "Recalc. Uncertainty", on_click = (lambda event, game=game: debug_printer(event, game)))
 
     #One final training with all queried points for evaluation
     #game.clf.fit(game.X_train, game.y_train)
