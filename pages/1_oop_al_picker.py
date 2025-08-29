@@ -16,6 +16,7 @@ from sklearn.metrics import accuracy_score
 import operator
 import datetime
 from pathlib import Path
+import streamlit as st
 
 def PlotContour2(x_grid, y_grid, clf):
     # This function generates a grid of function values according to the classifier.
@@ -184,6 +185,7 @@ def uncert_choice(label,game):
     #game.update_uncert() #to be implemented
 
 def main(input="iris",classifier="forest",uncertainty="entropy", extra_params={}):
+    st.write("main initialized!")
     global t
     t = datetime.datetime(1,1,1)
     
@@ -254,18 +256,18 @@ def main(input="iris",classifier="forest",uncertainty="entropy", extra_params={}
 
     plt.xlim(game.X_raw[:,0].min()-0.5,game.X_raw[:,0].max()+0.5)
     plt.ylim(game.X_raw[:,1].min()-0.5,game.X_raw[:,1].max()+0.5)
-    plt.show()
+    st.pyplot(game.fig)
 
     #One final training with all queried points for evaluation
-    game.clf.fit(game.X_train, game.y_train)
-    predictions = game.clf.predict(game.X_test)
+    #game.clf.fit(game.X_train, game.y_train)
+    #predictions = game.clf.predict(game.X_test)
     #Save accuracy of current seed in array for later use
-    global_history = accuracy_score(predictions, game.y_test)
+    #global_history = accuracy_score(predictions, game.y_test)
 
     # This can probably be done in a nicer way for the main program to sort out the details.
-    return("Final accuracy: " + str(global_history)+"\n"+
-           "Total number of points: "+str(game.N_QUERIES)+"\n"+
-           "Classes discovered: "+str(np.unique(game.y_train).size)+"/"+str(np.unique(game.y_raw).size))
+    #return("Final accuracy: " + str(global_history)+"\n"+
+    #       "Total number of points: "+str(game.N_QUERIES)+"\n"+
+    #       "Classes discovered: "+str(np.unique(game.y_train).size)+"/"+str(np.unique(game.y_raw).size))
 
 # The following defines the "game state", which is the core of the program and contains most of the information used throughout the program,
 # such as chosen data points and the current choice of model and uncertainty.
@@ -519,6 +521,8 @@ class game_state:
 
 def on_close(event):
     pass
+
+st.button("Start game", on_click=main)
 
 if __name__ == "__main__":
     def main():  # your arguments here
