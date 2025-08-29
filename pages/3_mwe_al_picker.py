@@ -215,7 +215,6 @@ def main(classifier="forest",uncertainty="entropy", extra_params={}):
     # 2. If you want to imitate "batch querying", it makes sense to use the same uncertainty measurements multiple times before recalculating.
     #    Note that this is not quite batch querying, as the label of a queried point still becomes visible right away.
     #bax = game.fig.add_axes([0.45, 0.05, 0.09, 0.075])
-    st.button(label = "Recalc. Uncertainty", on_click = lambda event: callbutton(event, game))
 
     # Button for highlighting training data
     bax2 = game.fig.add_axes([0.35, 0.05, 0.09, 0.075])
@@ -253,6 +252,8 @@ def main(classifier="forest",uncertainty="entropy", extra_params={}):
     plt.xlim(game.X_raw[:,0].min()-0.5,game.X_raw[:,0].max()+0.5)
     plt.ylim(game.X_raw[:,1].min()-0.5,game.X_raw[:,1].max()+0.5)
     st.pyplot(game.fig)
+    
+    st.button(label = "Recalc. Uncertainty", on_click = lambda event, game=game: callbutton(event, game))
 
     #One final training with all queried points for evaluation
     #game.clf.fit(game.X_train, game.y_train)
